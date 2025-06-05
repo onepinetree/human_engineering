@@ -6,29 +6,50 @@
   <title>성균관대학교 신청/자격관리 A/B 테스트 - B안</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .b-menu-table-wrap { width: 100%; padding: 0 32px; }
-    .b-menu-table { display: flex; flex-wrap: wrap; gap: 0 32px; row-gap: 6px; }
-    .b-menu-col { min-width: 220px; flex: 1 1 0; margin-bottom: 6px; }
+    .b-menu-table-wrap { width: 100%; padding: 0 24px; }
+    .b-menu-table {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px 20px;
+      align-items: start;
+    }
+    .b-menu-col {
+      display: flex;
+      flex-direction: column;
+    }
     .b-menu-col .b-menu-title {
       background: #F1F6EF;
       border-left: 4px solid #4cb32b;
       font-weight: 600;
-      font-size: 1.08rem;
-      padding: 4px 10px;
-      margin-bottom: 0;
-      line-height: 1.22;
+      font-size: 0.9rem;
+      padding: 5px 8px;
+      line-height: 1.3;
+      width: 100%;
     }
-    .b-menu-list { list-style: none; padding: 0 0 0 0; margin: 0; }
-    .b-menu-list li { font-size: 0.93rem; color: #222; padding: 0 0 0 7px; line-height: 1.32; }
-    .b-menu-list li a.b-menu-link { display: block; text-decoration: none; color: inherit; transition: color 0.2s; border-radius: 3px; }
+    .b-menu-list {
+      list-style: none;
+      padding: 4px 0 0 0;
+      margin: 0;
+      width: 100%;
+    }
+    .b-menu-list li { font-size: 0.88rem; color: #222; padding: 0px 0 0px 7px; line-height: 1.3; }
+    .b-menu-list li a.b-menu-link { display: block; text-decoration: none; color: inherit; transition: color 0.2s; border-radius: 3px; padding: 1px 0; }
     .b-menu-list li a.b-menu-link:hover { background-color: transparent; color: #1a5c2e; }
-    .b-menu-table .b-menu-col + .b-menu-col { margin-left: 0; }
-    @media (max-width: 900px) { .b-menu-table { flex-direction: column; gap: 0; } .b-menu-col { min-width: 0; } }
-    @media (max-width: 600px) { .b-menu-table-wrap { padding: 0 8px; } }
-    /* 하단 b-menu-table의 컬럼 너비 고정 및 좌측 정렬 */
-    .b-menu-table:last-of-type .b-menu-col {
-      flex: none !important;
-      width: 220px !important;
+    @media (max-width: 900px) { 
+      .b-menu-table {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px 12px;
+      }
+      .b-menu-table-wrap { padding: 0 16px; }
+      .b-menu-col .b-menu-title { font-size: 0.85rem; padding: 4px 6px; }
+      .b-menu-list li { font-size: 0.82rem; }
+    }
+    @media (max-width: 600px) { 
+      .b-menu-table {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px 10px;
+      }
+       .b-menu-table-wrap { padding: 0 8px; }
     }
   </style>
 </head>
