@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>성균관대학교 신청/자격관리 A/B 테스트 - B안</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .b-menu-table-wrap { width: 100%; padding: 0 32px; }
+    .b-menu-table { display: flex; flex-wrap: wrap; gap: 0 32px; row-gap: 6px; }
+    .b-menu-col { min-width: 220px; flex: 1 1 0; margin-bottom: 6px; }
+    .b-menu-col .b-menu-title {
+      background: #F1F6EF;
+      border-left: 4px solid #4cb32b;
+      font-weight: 600;
+      font-size: 1.08rem;
+      padding: 4px 10px;
+      margin-bottom: 0;
+      line-height: 1.22;
+    }
+    .b-menu-list { list-style: none; padding: 0 0 0 0; margin: 0; }
+    .b-menu-list li { font-size: 0.93rem; color: #222; padding: 0 0 0 7px; line-height: 1.32; }
+    .b-menu-list li a.b-menu-link { display: block; text-decoration: none; color: inherit; transition: color 0.2s; border-radius: 3px; }
+    .b-menu-list li a.b-menu-link:hover { background-color: transparent; color: #1a5c2e; }
+    .b-menu-table .b-menu-col + .b-menu-col { margin-left: 0; }
+    @media (max-width: 900px) { .b-menu-table { flex-direction: column; gap: 0; } .b-menu-col { min-width: 0; } }
+    @media (max-width: 600px) { .b-menu-table-wrap { padding: 0 8px; } }
+    /* 하단 b-menu-table의 컬럼 너비 고정 및 좌측 정렬 */
+    .b-menu-table:last-of-type .b-menu-col {
+      flex: none !important;
+      width: 220px !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="skku-header">
+    <div class="skku-header-row center-logo">
+      <button class="back-btn top-left-btn" onclick="location.href='index.html'">←</button>
+      <div class="skku-logo">성균관대학교</div>
+      <button class="skku-close-btn" aria-label="닫기">✕</button>
+    </div>
+    <nav class="skku-nav">
+      <ul>
+        <li>학사일정</li>
+        <li class="active">신청/자격관리</li>
+        <li>학적/개인영역</li>
+        <li>수업영역</li>
+        <li>장학영역</li>
+        <li>공학인증</li>
+        <li>IT 서비스</li>
+        <li>전자투표</li>
+        <li>지식재산권</li>
+        <li>연구</li>
+      </ul>
+    </nav>
+    <!-- <div class="back-btn-wrap"><button class="back-btn" onclick="location.href='index.html'">← 뒤로가기</button></div> -->
+  </div>
+  <div class="skku-main-wrap">
+    <div class="skku-main-inner">
+      <div id="b-menu-container" class="b-menu-table-wrap">
+        <!-- B안 메뉴가 여기에 동적으로 생성됩니다. -->
+      </div>
+    </div>
+  </div>
+  <script type="module" src="b_main.js"></script>
+</body>
+</html> 
