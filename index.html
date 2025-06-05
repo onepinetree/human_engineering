@@ -6,9 +6,11 @@
   <title>성균관대학교 신청/자격관리 A/B 테스트 - 선택</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .abtest-btns { display: flex; justify-content: center; gap: 32px; margin-top: 80px; }
-    .abtest-btns button { font-size: 1.15rem; font-weight: 600; padding: 18px 48px; border-radius: 12px; border: none; background: #1a5c2e; color: #fff; cursor: pointer; transition: background 0.2s; box-shadow: 0 2px 8px rgba(44,62,80,0.08); }
+    .abtest-btns { display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 32px; margin-top: 80px; }
+    .abtest-btns .button-wrapper { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 200px; }
+    .abtest-btns button { font-size: 1.15rem; font-weight: 600; padding: 18px 0; border-radius: 12px; border: none; background: #1a5c2e; color: #fff; cursor: pointer; transition: background 0.2s; box-shadow: 0 2px 8px rgba(44,62,80,0.08); width: 100%; text-align: center; }
     .abtest-btns button:hover { background: #3498db; }
+    .button-description { font-size: 0.85rem; color: #555; margin-top: 2px; text-align: center; }
   </style>
 </head>
 <body>
@@ -38,9 +40,18 @@
       <!-- 가운데 핵심 메뉴 UI 영역 -->
       <div class="container">
         <div class="abtest-btns">
-          <button onclick="location.href='a_test.html'">A안 테스트 페이지로 이동</button>
-          <button onclick="location.href='b_test.html'">B안 테스트 페이지로 이동</button>
-          <button onclick="location.href='c_test.html'">C안 테스트 페이지로 이동</button>
+          <div class="button-wrapper">
+            <button onclick="location.href='b_test.html'">기존 GLS</button>
+            <p class="button-description"> (A안)</p>
+          </div>
+          <div class="button-wrapper">
+            <button onclick="location.href='c_test.html'">B안</button>
+            <p class="button-description">카테고리별 색상 강조 스타일</p>
+          </div>
+          <div class="button-wrapper">
+            <button onclick="location.href='a_test.html'">C안</button>
+            <p class="button-description">단계별 메뉴 펼침 스타일</p>
+          </div>
         </div>
       </div>
     </div>
