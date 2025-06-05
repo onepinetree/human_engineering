@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>성균관대학교 신청/자격관리 A/B 테스트 - C안</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .c-menu-table-wrap { 
+      width: 100%; 
+      padding: 0 10px; /* 좌우 약간의 패딩 */
+      box-sizing: border-box;
+    }
+    .c-menu-table {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* 기본 6열 */
+      gap: 0; /* 열 간격 없음 */
+      border-left: 1px solid #eee; /* 전체 테이블의 왼쪽 테두리 */
+    }
+    .c-menu-col {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #eee; /* 열 사이 구분선 */
+      box-sizing: border-box;
+      background-color: #fff; /* 각 열의 배경색을 흰색으로 명시 */
+    }
+    .c-menu-title { /* 대분류 제목 (예: 기타 영역) */
+      font-weight: bold;
+      font-size: 0.9rem; 
+      padding: 8px 10px; /* 패딩 조정 */
+      text-align: center;
+      color: #006837; /* 짙은 녹색 글자 (성균관대 대표색) */
+      background-color: #e7f3e2; /* 연한 녹색 배경 (이미지 참고) */
+      border: 1px solid #c5e0bb; /* 배경보다 살짝 짙은 녹색 테두리 */
+      border-radius: 5px;       /* 둥근 모서리 */
+      margin: 8px 8px 10px 8px; /* 컨테이너 주변 여백 (상, 좌우, 하) */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.3;
+      /* 기존 border-top 스타일은 제거 (컨테이너 전체 스타일로 대체) */
+    }
+    .c-menu-section { /* 소분류 섹션 그룹 */
+      margin: 0 5px 10px 5px; /* 좌우 약간의 내부 여백 및 섹션 간 하단 여백 */
+    }
+    .c-menu-section-title { /* 소분류 제목 (예: 나의신청현황조회) */
+      background-color: #f0f4f0; 
+      border-left: 3px solid #8DC63F;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 6px 8px;
+      margin-bottom: 4px; /* 메뉴 리스트와의 간격 */
+      color: #333;
+      line-height: 1.3;
+    }
+    .c-menu-section-list {
+      list-style: none;
+      padding: 0 0 0 8px; /* 소분류 제목과의 들여쓰기 */
+      margin: 0;
+    }
+    .c-menu-section-list li { 
+      font-size: 0.82rem; 
+      color: #444; 
+      padding: 2px 0; 
+      line-height: 1.35; 
+    }
+    .c-menu-section-list li a.c-menu-link { 
+      display: block; 
+      text-decoration: none; 
+      color: inherit; 
+      transition: color 0.2s, background-color 0.2s; 
+      padding: 1px 3px; /* 링크 내부 패딩 살짝 */
+      border-radius: 2px;
+    }
+    .c-menu-section-list li a.c-menu-link:hover { 
+      background-color: #e9f5e9; 
+      color: #006837; 
+    }
+
+    /* 반응형: 화면 너비에 따라 열 개수 조정 */
+    @media (max-width: 1200px) {
+      .c-menu-table {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .c-menu-table-wrap { padding: 0 10px; }
+    }
+    @media (max-width: 768px) {
+      .c-menu-table {
+        grid-template-columns: repeat(2, 1fr);
+      }
+       .c-menu-table-wrap { padding: 0 8px; }
+    }
+    @media (max-width: 480px) {
+      .c-menu-table {
+        grid-template-columns: 1fr;
+      }
+      .c-menu-title { min-height: 36px; font-size: 0.88rem;}
+      .c-menu-section-title { font-size: 0.82rem; padding: 5px 7px; }
+      .c-menu-section-list li { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="skku-header">
+    <div class="skku-header-row center-logo">
+      <button class="back-btn top-left-btn" onclick="location.href='index.html'">←</button>
+      <div class="skku-logo">성균관대학교</div>
+      <button class="skku-close-btn" aria-label="닫기">✕</button>
+    </div>
+    <nav class="skku-nav">
+      <ul>
+        <li>학사일정</li>
+        <li class="active">신청/자격관리</li>
+        <li>학적/개인영역</li>
+        <li>수업영역</li>
+        <li>장학영역</li>
+        <li>공학인증</li>
+        <li>IT 서비스</li>
+        <li>전자투표</li>
+        <li>지식재산권</li>
+        <li>연구</li>
+      </ul>
+    </nav>
+  </div>
+  <div class="skku-main-wrap">
+    <div class="skku-main-inner">
+      <div id="c-menu-container" class="c-menu-table-wrap">
+        <!-- C안 메뉴가 여기에 동적으로 생성됩니다. -->
+      </div>
+    </div>
+  </div>
+  <script type="module" src="c_main.js"></script>
+</body>
+</html> 
